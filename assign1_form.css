@@ -8,6 +8,8 @@
     --checkboxColor: #AAAAAA;
     
     --required-symbol: '*';
+    --input-font-size: 1.2rem;
+
 }
 
 
@@ -101,9 +103,12 @@ input {
 
 .job-app-form {
     margin-top: 5rem;
+}
+
+.eight-column-section {
     display: grid;
-    grid-template-columns: repeat(1fr, 8);
-    grid-template-rows: auto;
+    grid-template-columns: repeat(8, 1fr);
+    grid-auto-rows: minmax(2rem, auto);
 }
 
 .privacy-act-statement {
@@ -139,8 +144,8 @@ input {
 
 input[type="text"], input[type="email"] {
     width: 100%;
-    height: 1.2rem;
-    font-size: 1.2rem;
+    height: calc(100% - var(--input-font-size));
+    font-size: var(--input-font-size);
     border: none;
     background-color: #d2d4ff4b;
 }
@@ -162,10 +167,99 @@ input[type="checkbox"] {
 
 }
 
+.short-input label {
+    width: 70%;
+}
+
+.short-input input {
+    float: right;
+    width: 50%;
+}
+
 .job-app-form label {
     font-size: 0.8rem;
 }
 
-.centre-input {
+.in-table-title p {
+    font-size: 0.8rem;
+}
+
+.centre-text {
     text-align: center;
+}
+
+.nine-column-section {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-auto-rows: minmax(2rem, auto);
+}
+
+.one-col {
+    grid-column: span 1;
+}
+
+.two-col {
+    grid-column: span 2;
+}
+
+.three-col {
+    grid-column: span 3;
+}
+
+.four-col {
+    grid-column: span 4;
+}
+
+.five-col {
+    grid-column: span 5;
+}
+
+.six-col {
+    grid-column: span 6;
+}
+
+.seven-col {
+    grid-column: span 7;
+}
+
+.eight-col {
+    grid-column: span 8;
+}
+
+.nine-col {
+    grid-column: span 9;
+}
+
+.one-row {
+    grid-row: span 1;
+}
+
+.two-row {
+    grid-row: span 2;
+}
+
+.three-row {
+    grid-row: span 3;
+}
+
+.four-row {
+    grid-row: span 4;
+}
+
+.five-row {
+    grid-row: span 5;
+}
+
+.six-row {
+    grid-row: span 6;
+}
+
+#date-input-div {
+    display: flex;
+    flex-direction: row;
+}
+
+#date-input-div div {
+    display: flex;
+    flex-direction: column;
 }
