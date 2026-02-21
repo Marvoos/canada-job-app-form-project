@@ -1,0 +1,171 @@
+:root {
+    --back-color: #ffffff;
+    --border-size: 0.0625rem;
+    --border-color: #000000;
+    --btnBackColor: #0fd3e9;
+    --btnBorderColor: #1BC4D9;
+    --btnShadowColor: #AAAAAA;
+    --checkboxColor: #AAAAAA;
+    
+    --required-symbol: '*';
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 2rem;
+    color: var(--border-color);
+    background-color: var(--back-color);
+}
+
+input {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.required-text::before {
+    content: var(--required-symbol);
+}
+
+.company-logo-name {
+    display: flex;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    width: 25rem;
+}
+
+.company-logo-name img {
+    width: 4rem;
+    height: auto;
+    margin-right: 1.5rem;
+}
+
+.company-logo-name p {
+    width: 40%;
+}
+
+.job-app-form h1 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    width: 55%;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.job-app-form h3 {
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.form-btns {
+    position: absolute;
+    right: 2rem;
+    top: 0.25rem;   
+}
+
+.form-btns button {
+    padding: 0rem 1rem;
+}
+
+.form-btns a {
+    text-decoration: none;
+    color: var(--border-color);
+    padding: 0rem 2rem;
+}
+
+.form-btns a, .form-btns button {
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: var(--btnBackColor);
+    border: outset 0.25rem var(--btnBorderColor);
+    border-top: outset 0.25rem var(--back-color);
+    border-left: outset 0.25rem var(--back-color);
+    box-shadow:  0 0 0 4px var(--btnShadowColor);
+    margin-left: 0.5rem;
+    cursor: pointer;
+    
+}
+
+.form-btns a:active, .form-btns button:active {
+    background-color: var(--btnBackColor);
+    border: inset 0.25rem var(--back-color);
+    border-top: inset 0.25rem var(--btnBorderColor);
+    border-left: inset 0.25rem var(--btnBorderColor);
+}
+
+.job-app-form {
+    margin-top: 5rem;
+    display: grid;
+    grid-template-columns: repeat(1fr, 8);
+    grid-template-rows: auto;
+}
+
+.privacy-act-statement {
+    word-spacing: -1px;
+    position: absolute;
+    right: 2rem;
+    top: 2.3rem;
+    width: 30rem;
+}
+
+.privacy-act-statement h1 {
+    font-size: 0.7rem;
+}
+
+.privacy-act-statement p {
+    font-size: 0.55rem;
+}
+
+.job-app-form h2 {
+    font-size: 1rem;
+    padding: 0.5rem 0;
+}
+
+.in-table-title {
+    padding: 0.625rem;
+    border: solid 1px var(--border-color);
+}
+
+.instructions {
+    text-align: center;
+    border: solid var(--border-size) var(--border-color);
+}
+
+input[type="text"], input[type="email"] {
+    width: 100%;
+    height: 1.2rem;
+    font-size: 1.2rem;
+    border: none;
+    background-color: #d2d4ff4b;
+}
+
+.input-div {
+    padding: 0px 5px;
+    border: solid var(--border-size) var(--border-color);
+}
+
+input[type="text"]:focus {
+    background-color: var(--back-color);
+    border: none;
+    outline: none;
+}
+
+input[type="checkbox"] {
+    color: var(--checkboxColor);
+    border: solid var(--border-size) var(--checkboxColor);
+
+}
+
+.job-app-form label {
+    font-size: 0.8rem;
+}
+
+.centre-input {
+    text-align: center;
+}

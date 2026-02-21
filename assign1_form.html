@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="assign1_form.css">
+        <title>Job Application</title>
+    </head>
+    <body>
+        <div class="company-logo-name">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Flag_of_Canada_%28black_and_white%29.svg" alt="black and white Canadian flag.">
+            <p>Canada Revenue Agency</p>
+            <p>Agence du revenue du Canada</p>
+        </div>
+        <div class="privacy-act-statement">
+            <h1>Protected when completed</h1>
+            <p>The information on this form is protected under the provisions of the <em>Privacy Act</em>. The form is stored in standard bank, Employee Personal Record CRA PSE 901.</p>
+            <h1>Protégé une fois rempli</h1>
+            <p>Les renseignements que contient le présent formulaire sont protégés par les dispositions de la <em>Lol sur la protection des renseignements personnels</em>. Le formulaire est conservé dans le fichier ordinaire concernant le dossier personnel d'un employé ARC POE 901.</p>
+        </div>
+        <section class="job-app-form">
+            <h1>Job Application<br>Demande D'emploi</h1>
+            <form action="">
+                <div class="form-btns">
+                    <button type="reset">Restore - Restaurer</button>
+                    <a href="https://www.canada.ca/en/revenue-agency/services/forms-publications/about-forms-publications.html">Help</a>
+                    <a href="https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/a-propos-formulaires-publications-format.html">Aide</a>
+                </div>
+                <div>
+                    <p>Fields marked with an asterisk (*) must be filled in or application will not be accepted. <br>Les champs qui portent un astérisque (*) doivent être remplis sinon la demande ne sera pas accepté.</p>      
+                    <div class="input-div">
+                        <label for="job-title" class="required-text">Job Title &ndash; Titre du poste</label>
+                        <input type="text" name="job-title" id="job-title" required>
+                    </div>
+                    <div class="input-div">
+                        <label for="sel-proc-num" class="required-text">Selection process number &ndash; Numéro du processus de sélection</label>
+                        <input type="text" name="sel-proc-num" id="sel-proc-num" required>
+                    </div> 
+                </div>
+                <h2>Personal information &ndash; Renseignements personnels</h2>
+                <div class="input-div">
+                    <label for="lname" class="required-text">Family name &ndash; Nom</label>
+                    <input type="text" name="lname" id="lname" required>
+                </div>
+                <div class="input-div">
+                    <label for="fname" class="required-text">Given name &ndash; Prénom</label>
+                    <input type="text" name="fname" id="fname" required>
+                </div> 
+                <div class="input-div">
+                    <label for="initial">Initial &ndash; Initiale</label>
+                    <input type="text" name="initial" id="initial" required>
+                </div> 
+                <div class="input-div">
+                    <label for="address" class="required-text">Address &ndash; Addresse</label>
+                    <input type="text" name="address" id="address" required>
+                </div> 
+                <div class="input-div">
+                    <label for="city" class="required-text">City &ndash; Ville</label>
+                    <input type="text" name="city" id="city" required>
+                </div> 
+                <div class="input-div">
+                    <label for="province" class="required-text">Province</label>
+                    <input type="text" name="province" id="province" required>
+                </div> 
+                <div class="input-div">
+                    <label for="postal-code" class="required-text">Postal Code &ndash; Code postal</label>
+                    <input type="text" name="postal-code" id="postal-code" required>
+                </div> 
+                <div class="input-div">
+                    <label for="country" class="required-text">Country &ndash; Pays</label>
+                    <input type="text" name="country" id="country" required>
+                </div> 
+                <div class="input-div">
+                    <label for="email-address" class="required-text">Email address (Format: username@hostname.domain)<br> Courriel (Format: utilisateur@hôte.domaine)</label>
+                    <input type="email" name="email-address" id="email-address" required>
+                </div> 
+                <div class="in-table-title">
+                    <h3 class="required-text">Telephone &ndash; Téléphone</h3>
+                </div>
+                <div class="input-div">
+                    <label for="home-phone" class="required-text">Home &ndash; Résidence</label>
+                    <input class="centre-input" type="text" name="home-phone" id="home-phone" required>
+                </div>
+                <div class="input-div">
+                    <label for="office-phone">Office &ndash; Bureau</label>
+                    <input class="centre-input" type="text" name="office-phone" id="office-phone">
+                </div>
+                <div class="input-div">
+                    <label for="fax-num">Fax &ndash; Télécopieur</label>
+                    <input class="centre-input" type="text" name="fax-num" id="fax-num">
+                </div>
+                <div class="input-div">
+                    <label for="other-num">Other &ndash; Autre</label>
+                    <input class="centre-input" type="text" name="other-num" id="other-num">
+                </div>
+                <h2>For CRA and Public Service employees only<br>Réservé aux employé(e)s de l'ARC et de la fonction public seulement</h2>
+                <div class="in-table-title">
+                    <h3>Citezenship &ndash; Citoyenneté</h3>
+                </div>
+                <div class="input-div check-div">
+                    <input type="radio" name="citizenship-status" id="can-citizen">
+                    <label for="can-citizen">Canadian Citizen<br>Citoyen(ne) canadien(ne)</label>
+                </div>
+                <div class="input-div check-div">
+                    <input type="radio" name="citizenship-status" id="landed-immigrant">
+                    <label for="landed-immigrant">Landed Immigrant / Permanent Citizen<br>Immigrant(e) reçu(e) / Résident(e)</label>
+                </div>
+                <div class="input-div check-div">
+                    <input type="radio" name="citizenship-status" id="work-permit">
+                    <label for="work-permit">Work Permit<br>Permis de travail</label>
+                </div>
+                <div class="in-table-title">
+                    <h3 class="required-text">Where is your current work location?<br>À quel endroit travaillez-vous présentement?</h3>
+                </div>
+                <div class="input-div check-div">
+                    <label for="office-loc" class="required-text">Office / City &ndash; Bureau / Ville</label>
+                    <input type="text" name="office-loc" id="office-loc">
+                </div>
+                <div class="input-div check-div">
+                    <label for="job-division" class="required-text">Division</label>
+                    <input type="text" name="job-division" id="job-division">
+                </div>
+                <div class="input-div check-div">
+                    <label for="work-section" class="required-text">Work Section &ndash; Section de travail</label>
+                    <input type="text" name="work-section" id="work-section">
+                </div>
+                <div class="in-table-title">
+                    <div>
+                        <h3 class="required-text">Substantive group / sub-group / level (i.e., CR-04, GS-STS-03, SP-04)<br>Group / sous-group / niveau de titularisation (p. ex. CR04, GS-STS-03, SP-04)</h3>
+                    </div>
+                    <div>
+                        <input type="text" class="substantive-group-input centre-input" name="substantive-group" id="substantive-group"><p>/</p>
+                        <input type="text" class="substantive-group-input centre-input" name="sub-group" id="sub-group"><p>/</p>
+                        <input type="text" class="substantive-group-input centre-input" name="group-level" id="group-level">
+                    </div>
+                </div>
+                <div class="in-table-title">
+                    <p class="required-text">Please indicate if you are &ndash; Veuillez indiquer si vous êtes</p>
+                </div>
+                <div class="input-div">
+                    <input type="radio" name="employment-status" id="permanent-employee">
+                    <label for="permanent-employee">Permanent Employee<br>Un(e) employé(e) permanent(e)</label>
+                    <input type="radio" name="employment-status" id="term-employee">
+                    <label for="term-employee">Term Employee<br>Un(e) employé(e) nommé(e) pour un(e) période déterminée</label>
+                </div>
+                <div class="input-div">
+                    <label for="pers-record-id" class="required-text">Personal Record Identifier (PRI)<br>Code d'indentification de dossier personnel (CIDP)</label>
+                    <input type="text" id="pers-record-id">
+                </div>
+                
+            </form>
+        </section>
+    </body>
+</html>
