@@ -64,17 +64,18 @@
                 <!--Section, label, and input for the user's last name-->
                 <div class="input-div half-col-grid">
                     <label for="lname" class="required-text">Family name &ndash; Nom</label>
-                    <input type="text" name="lname" id="lname" required>
+                    <!--Using this pattern a ton. It includes all alpha characters and a hyphen for inclusiveness-->
+                    <input type="text" name="lname" id="lname" pattern="[a-zA-Z-]" required>
                 </div>
                 <!--Section, label, and input for the user's first name-->
                 <div class="input-div third-col-grid">
                     <label for="fname" class="required-text">Given name &ndash; Prénom</label>
-                    <input type="text" name="fname" id="fname" required>
+                    <input type="text" name="fname" id="fname" pattern="[a-zA-Z-]" required>
                 </div> 
                 <!--Section, label, and input for the user's initials. This field isn't required-->
                 <div class="input-div sixth-col-grid">
                     <label for="initial">Initial &ndash; Initiale</label>
-                    <input type="text" name="initial" id="initial">
+                    <input type="text" name="initial" id="initial" pattern="[a-zA-Z]">
                 </div> 
                 <!--Address consists of three rows and four columns as defined by the classes-->
                 <!--Involves a textarea input which has a set amount of columns, rows, and has a maximum character length and doesn't have any controls-->
@@ -85,12 +86,12 @@
                 <!--User's city input-->
                 <div class="input-div fourth-col-grid">
                     <label for="city" class="required-text">City &ndash; Ville</label>
-                    <input type="text" name="city" id="city" maxlength="25" required>
+                    <input type="text" name="city" id="city" maxlength="25" pattern="[a-zA-Z-]" required>
                 </div> 
                 <!--User's province input-->
                 <div class="input-div fourth-col-grid">
                     <label for="province" class="required-text">Province</label>
-                    <input type="text" name="province" id="province" maxlength="25" required>
+                    <input type="text" name="province" id="province" maxlength="25" pattern="[a-zA-Z-]" required>
                 </div> 
                 <!--Postal code input, must match a specific pattern-->
                 <div class="input-div fourth-col-grid">
@@ -100,7 +101,7 @@
                 <!--User's country input-->
                 <div class="input-div fourth-col-grid">
                     <label for="country" class="required-text">Country &ndash; Pays</label>
-                    <input type="text" name="country" id="country" maxlength="25" required>
+                    <input type="text" name="country" id="country" maxlength="25" pattern="[a-zA-Z-]" required>
                 </div> 
                 <!--User's email address input-->
                 <div class="input-div half-col-grid">
@@ -133,169 +134,242 @@
                 <!--End of personal information section of form-->
 
                 <!--Beginning of CRA section of form-->
-                <!---->
+                <!--External title consisting of the full 12 columns-->
                 <h2 class="full-col-grid">For CRA and Public Service employees only<br>Réservé aux employé(e)s de l'ARC et de la fonction public seulement</h2>
+                <!--In table title for the fieldset-->
                 <div class="in-table-title full-col-grid">
                     <h3>Citezenship &ndash; Citoyenneté</h3>
                 </div>
+                <!--In the original CRA section, the radio buttons look more like checkboxes, however, they behave the same way-->
+                <!--Beginning of same citizenship status input-->
                 <div class="input-div check-div radio-input-display third-col-grid">
-                    <input type="radio" name="citizenship-status" id="can-citizen">
+                    <!--Radio button for canadian citizen-->
+                    <input type="radio" name="citizenship-status" id="can-citizen" value="canadian-citizen">
                     <label for="can-citizen">Canadian Citizen<br>Citoyen(ne) canadien(ne)</label>
                 </div>
                 <div class="input-div check-div radio-input-display third-col-grid">
-                    <input type="radio" name="citizenship-status" id="landed-immigrant">
+                    <!--Radio button for landed citizen/permanent citizen-->
+                    <input type="radio" name="citizenship-status" id="landed-immigrant" value="landed-immigrant-or-permanent-resident">
                     <label for="landed-immigrant">Landed Immigrant / Permanent Citizen<br>Immigrant(e) reçu(e) / Résident(e)</label>
                 </div>
-                <div class="input-div check-div radio-input-display third-col-grid">
+                <div class="input-div check-div radio-input-display third-col-grid" value="work-permit">
+                    <!--Radio button for work permit-->
                     <input type="radio" name="citizenship-status" id="work-permit">
                     <label for="work-permit">Work Permit<br>Permis de travail</label>
                 </div>
+                <!--End of citizenship status input-->
+
+                <!--Beginning of current work location input. A required input-->
                 <div class="in-table-title full-col-grid">
                     <h3 class="required-text">Where is your current work location?<br>À quel endroit travaillez-vous présentement?</h3>
                 </div>
                 <div class="input-div check-div third-col-grid">
+                    <!--Office location text input and label-->
                     <label for="office-loc" class="required-text">Office / City &ndash; Bureau / Ville</label>
                     <input type="text" name="office-loc" id="office-loc" maxlength="25" required>
                 </div>
                 <div class="input-div check-div third-col-grid">
+                    <!--Job division text input and label. Only accepts characters-->
                     <label for="job-division" class="required-text">Division</label>
-                    <input type="text" name="job-division" id="job-division" maxlength="25" required>
+                    <input type="text" name="job-division" id="job-division" maxlength="25" pattern="[a-zA-Z]" required>
                 </div>
                 <div class="input-div check-div third-col-grid">
+                    <!--Work section text input and label-->
                     <label for="work-section" class="required-text">Work Section &ndash; Section de travail</label>
                     <input type="text" name="work-section" id="work-section" maxlength="25" required>
                 </div>
+                <!--End of current work location input.-->
+
+                <!--Beginning of substantive group, sub-level, and level inputs. These are required. Due to the uniqueness, I had put this into the in-table-title class as the title of this section looked similar-->
                 <div class="in-table-title full-col-grid" id="substantive-group-div">
-                    <div>
-                        <h3 class="required-text">Substantive group / sub-group / level (i.e., CR-04, GS-STS-03, SP-04)<br>Group / sous-group / niveau de titularisation (p. ex. CR04, GS-STS-03, SP-04)</h3>
-                    </div>
+                    <!--Title section in a flex container to allow for a row flex-direction as input is right next to this h3-->
+                    <h3 class="required-text">Substantive group / sub-group / level (i.e., CR-04, GS-STS-03, SP-04)<br>Group / sous-group / niveau de titularisation (p. ex. CR04, GS-STS-03, SP-04)</h3>
+                    <!--A unique input group that accepts number and letters with a differences in the length of each-->
                     <div id="substantive-group-input-div">
                         <input type="text" class="centre-text" name="substantive-group" id="substantive-group" maxlength="8" required><p>/</p>
                         <input type="text" class="centre-text" name="sub-group" id="sub-group" maxlength="11" required><p>/</p>
                         <input type="text" class="centre-text" name="group-level" id="group-level" maxlength="8" required>
                     </div>
                 </div>
+                <!--End of this input section-->
+                
+                <!--Beginning of employment status-->
                 <div class="in-table-title full-col-grid">
                     <p class="required-text">Please indicate if you are &ndash; Veuillez indiquer si vous êtes</p>
                 </div>
+                <!--Permanent employee radio button within the employment status radio group-->
                 <div class="input-div radio-input-display half-col-grid">
-                    <input type="radio" name="employment-status" id="permanent-employee" required>
+                    <input type="radio" name="employment-status" id="permanent-employee" value="permanent-employee" required>
                     <label for="permanent-employee">Permanent Employee<br>Un(e) employé(e) permanent(e)</label>
                 </div>
+                <!--Term employee radio button within the employment status radio group-->
                 <div class="input-div radio-input-display half-col-grid">
-                    <input type="radio" name="employment-status" id="term-employee" required>
+                    <input type="radio" name="employment-status" id="term-employee" value="term-employee" required>
                     <label for="term-employee">Term Employee<br>Un(e) employé(e) nommé(e) pour un(e) période déterminée</label>
                 </div>
+                <!--End of employment status field-->
+
+                <!--Personal Record identifier text field. Accepts alphanumeric characters with a maximum length of 8 characters-->
                 <div class="input-div half-col-grid">
                     <label for="pers-record-id" class="required-text">Personal Record Identifier (PRI)<br>Code d'indentification de dossier personnel (CIDP)</label>
                     <input type="text" class="centre-text" id="pers-record-id" maxlength="8" required>
                 </div>
+                
+                <!--Date input field. Originally an official date type but changed due to differing format. Now includes three fields and reusable in case other pages need to be built-->
                 <div class="in-table-title fourth-col-grid">
                     <p>Anticipated end date of your term contract<br>Date prévue de la fin de votre contrat déterminé</p>
                 </div>
                 <div class="input-div date-input-div fourth-col-grid">
+                    <!--The year text field, centred starting at the current year and up to 2100-->
                     <div>
                         <label for="year-contract-end">Y&ndash;A</label>
                         <input class="centre-text" type="number" min="2026" max="2100" id="year-contract-end" name="year-contract-end">
                     </div>
+                    <!--The month text field, centred, only accepts valid month values-->
                     <div>
                         <label for="month-contract-end">M</label>
                         <input class="centre-text" type="number" min="1" max="12" id="month-contract-end" name="month-contract-end">
                     </div>
+                    <!--The day text field, centred, only accepts valid day values-->
                     <div>
                         <label for="day-contract-end">D&ndash;J</label>
                         <input class="centre-text" type="number" min="1" max="31" id="day-contract-end" name="day-contract-end">
                     </div>
-                </div>
-                <!--Beginning of CRA section of form-->
 
-                <!--Beginning of official language profile section of form-->
+                </div>
+                <!--End of employment status section-->
+                <!--End of CRA section of form-->
+
+                <!--Beginning of official language profile section of form. All inputs are enclosed in divs to allow for flex display in a row direction-->
                 <h2 class="full-col-grid">Official language profile &ndash; Profil linguistique officiel</h2>
                 <div class="in-table-title full-col-grid">
                     <p>Please indicate if you are &ndash; Veuillez indiquer si vous êtes</p>
                 </div>
+                <!--Input field for correspondence language. Select between english and french-->
                 <div class="input-div third-col-grid multi-radio-field">
                     <p class="required-text">a) For correspondence<br>Pour la correspondance</p>
-                    <div class="third-col-grid">
+                    
+                    <div class="third-col-grid"> 
+                        <!--English radio button-->
                         <div>
                             <input type="radio" name="correspondence-lang" id="correspondence-lang-en" value="english" required>
                             <label for="correspondence-lang-en">English<br>Anglais</label>
                         </div>
+                        <!--French radio button-->
                         <div>
                             <input type="radio" name="correspondence-lang" id="correspondence-lang-fr" value="french" required>
                             <label for="correspondence-lang-fr">French<br>Français</label>
                         </div>
+
                     </div>
+
                 </div>
+
+                <!--Interview language input includes english and french-->
                 <div class="input-div third-col-grid  multi-radio-field">
                     <p class="required-text">b) During an interview<br>Pour les entrevues</p>
+                    
                     <div>
+                        <!--English radio button-->
                         <div>
                             <input type="radio" name="interview-lang" id="interview-lang-en" value="english" required>
                             <label for="interview-lang-en">English<br>Anglais</label>
                         </div>
+                        <!--French radio button-->
                         <div>
                             <input type="radio" name="interview-lang" id="interview-lang-fr" value="french" required>
                             <label for="interview-lang-fr">French<br>Français</label>
                         </div>
+
                     </div>
-                    
+
                 </div>
+
+                <!--Written exam language, incudes both french and english-->
                 <div class="input-div third-col-grid  multi-radio-field">
                     <p class="required-text">c) For written examination<br>Pour un examin écrit</p>
+                    
                     <div>
+                        <!--English radio button-->
                         <div>
                             <input type="radio" name="exam-lang" id="exam-lang-en" value="english" required>
                             <label for="exam-lang-en">English<br>Anglais</label>
                         </div>
+                        <!--French radio button-->
                         <div>
                             <input type="radio" name="exam-lang" id="exam-lang-fr" value="french" required>
                             <label for="exam-lang-fr">French<br>Français</label>
                         </div>
+
                     </div>
+
                 </div>
+
+                <!--Working ability languages input-->
                 <div class="input-div half-col-grid  multi-radio-field">
                     <p class="required-text">d) In which language(s) do you consider yourself to have a working ability?<br>Dans quelle(s) langue(s) officielle(s) estimez-vous êtres on mesure de travailler?</p>
+                    
                     <div>
+                        <!--English radio button-->
                         <div>
                             <input type="radio" name="working-ability-lang" id="working-ability-en"  value="english" required>
                             <label for="working-ability-en">English<br>Anglais</label>
                         </div>
+                        <!--French radio button-->
                         <div>
                             <input type="radio" name="working-ability-lang" id="working-ability-fr" value="french" required>
                             <label for="working-ability-fr">French<br>Français</label>
                         </div>
+                        <!--Both languages radio button-->
                         <div>
                             <input type="radio" name="working-ability-lang" id="working-ability-both" value="both" required>
                             <label for="working-ability-both">Both<br>Les deux</label>
                         </div>
+
                     </div>
+
                 </div>
+
+
+                <!--Most proficient language input-->
                 <div class="input-div half-col-grid  multi-radio-field">
                     <p class="required-text">e) To which official language do you have primary personal identification (the language in which you are most proficient)?<br>À quelle(s) langue(s) officielle(s) vous associez-vous personnellement? (langue que vous maîtrisez le miuex)?</p>
+        
                     <div>
+                        <!--English radio button-->
                         <div>
                             <input type="radio" name="proficient-lang" id="proficient-lang-en"  value="english" required>
                             <label for="proficient-lang-en">English<br>Anglais</label>
                         </div>
+                        <!--French radio button-->
                         <div>
                             <input type="radio" name="proficient-lang" id="proficient-lang-fr" value="french" required>
                             <label for="proficient-lang-fr">French<br>Français</label>
                         </div>
+
                     </div>
+
                 </div>
+
+                <!--Second language evaluation, not totally sure of all possible results, however, the orginal form restricts to 3 characters and only including letters-->
                 <div class="input-div full-col-grid" id="sle-input">
+
                     <p>If you have valid SLE (Second Language Evaluation) results, please indicate your profile next to the language you were tested in (e.i., BBB)<br>Si vous avez des résultats d'Évaulation de langue seconde (ELS), veuillez indiquer votre profil pour la langue visée (p. ex. BBB)</p>
+                    
                     <div>
+                        <!--English Second Language Evaluation text input-->
                         <div>
                             <label for="english-sle">English<br>Anglais</label>
-                            <input class="centre-text" type="text" id="english-sle" name="english-sle" maxlength="3">
+                            <input class="centre-text" type="text" id="english-sle" name="english-sle" maxlength="3" pattern="[a-zA-Z]">
                         </div>
+                        <!--French Second Language Evaluation text input-->
                         <div>
                             <label for="french-sle">French<br>Français</label>
-                            <input class="centre-text" type="text" id="french-sle" name="french-sle" maxlength="3">
+                            <input class="centre-text" type="text" id="french-sle" name="french-sle" maxlength="3" pattern="[a-zA-Z]">
                         </div>
+
                     </div>
+
                 </div>
                 <!--End of official language profile section of form-->
 
