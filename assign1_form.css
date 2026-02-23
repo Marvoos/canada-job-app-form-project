@@ -1,3 +1,5 @@
+
+/*Root contains all variables used in document for better control over document styling*/
 :root {
     --back-color: #ffffff;
     --border-size: 0.0625rem;
@@ -15,12 +17,14 @@
 
 }
 
+/*Normalize margin, padding, and box-sizing of all elements*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/*Standard font size, padding around body/content, and set the background colour and font color to the corresponding variables*/
 body {
     font-family: Arial, Helvetica, sans-serif;
     padding: 2rem;
@@ -28,34 +32,18 @@ body {
     background-color: var(--back-color);
 }
 
+/*Set the padding on the standard button to 0 on top and bottom and 1 relative size on left and right*/
 button {
     padding: 0rem 1rem;
 }
 
-input, textarea {
-    font-family: 'Courier New', Courier, monospace;
-    height: calc(100% - var(--standard-label-size));
-    font-size: var(--input-font-size);
-    border: none;
-    background-color: var(--input-color);
-    margin-top: auto;
-}
-
-textarea { 
-    width: 100%;
-    height: calc(100% - var(--standard-label-size));
-    resize: none;
-    border: none;
-    background-color: var(--input-color);
-}
-
-input:focus, textarea:focus {
-    background-color: var(--input-div-back);
-    border: none;
-    outline: none;
-}
-
+/*Set the button and link styles to a blue colour as defined in the root pseudoclass selector*/
+/*Remove any default text decoration, set the font-size, weight, and colour*/
+/*Assign the border to top and left white. Bottom and right dark blue*/
+/*Ensure the cursor is of pointer when hovering over both. Allows for reactivity*/
 a, button {
+    text-decoration: none;
+    color: var(--border-color);
     font-size: 1rem;
     font-weight: bold;
     background-color: var(--btnBackColor);
@@ -65,26 +53,59 @@ a, button {
     box-shadow:  0 0 0 4px var(--btnShadowColor);
     margin-left: 0.5rem;
     cursor: pointer;
+    padding: 0rem 2rem;
     
 }
 
-button[type="submit"] {
-    margin-top: 1rem;
-}
-
-input[type="radio"] {
-    height: auto;
-    margin-top: 0;
-    background: none;
-}
-
+/*Change the style of the link and button when clicking on them*/
+/*Assign the border to top and left dark blue. Bottom and right white*/
+/*Also change the border to inset from outset*/
 a:active, button:active {
-    background-color: var(--btnBackColor);
     border: inset 0.25rem var(--back-color);
     border-top: inset 0.25rem var(--btnBorderColor);
     border-left: inset 0.25rem var(--btnBorderColor);
 }
 
+
+/*Assign the initial input and textarea elements to courier new, a background colour that stands out and stick the input to the bottom*/
+input, textarea {
+    font-family: 'Courier New', Courier, monospace;
+    height: calc(100% - var(--standard-label-size));
+    font-size: var(--input-font-size);
+    border: none;
+    background-color: var(--input-color);
+    margin-top: auto;
+}
+
+/*Remove controls from textarea, set the width to 100% of the section size*/
+textarea { 
+    width: 100%;
+    resize: none;
+}
+
+/*When the user clicks on the input and text area input or focuses on them, this should remove the border and outline as well as set the background colour to the colour of the section*/
+input:focus, textarea:focus {
+    background-color: var(--input-div-back);
+    border: none;
+    outline: none;
+}
+
+
+/*Change the button of type submit in the job-app-form to have more space above*/
+.job-app-form button[type="submit"] {
+    margin-top: 1rem;
+}
+
+/*Ensure the radio button stays in the centre of each label and assign an automatic height*/
+input[type="radio"] {
+    height: auto;
+    margin-top: 0;
+    margin-right: 0.5rem;
+}
+
+
+/*Take the privacy-act-statement outside of the document flow to display at the top and just below the help and reset buttons*/
+/*Since it is absolute, we can use the right and top properties to fine tune the position*/
 .privacy-act-statement {
     word-spacing: -1px;
     position: absolute;
@@ -93,18 +114,18 @@ a:active, button:active {
     width: 30rem;
 }
 
+/*Set the headings inside the privacy act to 0.7 relative units*/
 .privacy-act-statement h2 {
     font-size: 0.7rem;
 }
 
+/*Set the paragraphs inside the privacy act to 0.55 relative units*/
 .privacy-act-statement p {
     font-size: 0.55rem;
 }
 
-.job-app-form {
-    font-size: 0.8rem;
-}
-
+/*Style the main heading to capitalize all letters, set a standard font-size, ensure the title takes only 55% of the document width,
+align the text to the centre, and provide spacing between the title and the actual form*/
 .job-app-form h1 {
     font-size: 2rem;
     text-transform: uppercase;
@@ -113,50 +134,54 @@ a:active, button:active {
     margin-bottom: 1rem;
 }
 
+/*Define the size and weight of the h3's inside of the job-app-form-div*/
 .job-app-form h3 {
     font-size: 0.9rem;
     font-weight: bold;
 }
 
+/*Style the agency logo and name. Position this section to the top left of the document, define a width that
+looks similar to the original and display flex row for horizontal content*/
 .company-logo-name {
     display: flex;
     position: absolute;
     top: 2rem;
     left: 2rem;
-    width: 20rem;
+    width: 25rem;
 }
 
+/*Set the margin of the paragraph for the agency name to the left*/
+.company-logo-name p {
+    margin-left: 1rem;
+}
+
+/*Resize the canadian flag logo*/
 .company-logo-name img {
     width: 4rem;
     height: auto;
     margin-right: 1.5rem;
 }
 
-.company-logo-name p {
-    width: 40%;
-}
-
+/*Position the form buttons in the top right corner*/
 .form-btns {
     position: absolute;
     right: 2rem;
     top: 0.25rem;   
 }
 
-.form-btns a {
-    text-decoration: none;
-    color: var(--border-color);
-    padding: 0rem 2rem;
-}
-
+/*Set the pseudoelement for the required text class to a star character to denote required fields*/
 .required-text::before {
     content: var(--required-symbol);
 }
 
-
+/*Set the default font-size in the main form to 0.8 relative units and display the form below the buttons, privacy-act-statement, and the agency and logo*/
 .job-app-form {
     margin-top: 5rem;
+    font-size: 0.8rem;
 }
 
+/*Set the form to a grid display. Allow the amount of columns to reflect the amount defined in the corresponding variable.
+Also prevent the grid from overflow*/
 .job-app-form form {
     display: grid;
     grid-template-columns: repeat(var(--grid-system-size), minmax(0, 1fr));
@@ -164,21 +189,19 @@ a:active, button:active {
     
 }
 
+/*Set the h2 style in the job application form section*/
 .job-app-form h2 {
     font-size: 1rem;
     padding: 0.5rem 0;
 }
 
+/*Create a new class for titles within the table*/
 .in-table-title {
     padding: 0.625rem;
     border: solid 1px var(--border-color);
 }
 
-.instructions {
-    text-align: center;
-    border: solid var(--border-size) var(--border-color);
-}
-
+/*Standard input div class which allows for a border and specific styling around fields*/
 .input-div {
     background: var(--input-div-back);
     display: flex;
@@ -188,19 +211,22 @@ a:active, button:active {
     border: solid var(--border-size) var(--border-color);
 }
 
-
+/*Changing the font size of the label in the job application form div and paragraph elements inside of the in-table-title */
 .job-app-form label {
-    font-size: 0.8rem;
+    font-size: var(--standard-label-size);
 }
 
 .in-table-title p {
-    font-size: 0.8rem;
+    font-size: var(--standard-label-size);
 }
 
+
+/*Standard centre text class assigned to any text element to allow for centering*/
 .centre-text {
     text-align: center;
 }
 
+/*Individual radio input display*/
 .radio-input-display {
     display: flex;
     flex-direction: row;
@@ -209,10 +235,7 @@ a:active, button:active {
     padding: 0.5rem;
 }
 
-.radio-input-display > input {
-    margin: 0.5rem;
-}
-
+/*Date element class. Positioned each div or date input and label side by side using flex-direction*/
 .date-input-div {
     display: flex;
     flex-direction: row;
@@ -221,6 +244,7 @@ a:active, button:active {
     padding: 0;
 }
 
+/*Display the label on top of the input for the date input using flex-direction*/
 .date-input-div > div {
     display: flex;
     flex-direction: column;
@@ -230,12 +254,15 @@ a:active, button:active {
     height: 100%;
 }
 
+/*Style the date input within the date-input-div > div*/
 .date-input-div input {
     letter-spacing: 0.5rem;
     height: calc(100% - var(--standard-label-size));
     width: 100%;
 }
 
+/*Beginning of column classes*/
+/*Each class allows a section to span a different proportion of columns. Must be divisible by both 2, 3, 4, and 6*/
 .sixth-col-grid {
     grid-column: span calc(var(--grid-system-size) / 6);
 }
@@ -256,21 +283,29 @@ a:active, button:active {
     grid-column: span var(--grid-system-size);
 }
 
+/*End of column classes*/
+
+/*Class more specific for address field
+Allows for the input div to span 3 rows*/
 .row-span-three {
     grid-row: span 3;
 }
 
+/*Styles a field that contains multiple radio buttons*/
+/*Title goes above radio buttons through column direction*/
 .multi-radio-field {
     display: flex;
     flex-direction: column;
 }
 
+/*Div containing radio buttons will align each next to each other and at the beginning of the container*/
 .multi-radio-field > div {
     display: flex;
     flex-direction: row;
     justify-content: start;
 }
 
+/*Selects the div containing the label and radio buttons. These are aligned next to each other with a space around them*/
 .multi-radio-field > div > div {
     display: flex;
     flex-direction: row;
@@ -280,16 +315,41 @@ a:active, button:active {
     margin: 1rem;
 }
 
-.multi-radio-field > div > div > label {
-    margin: 0.5rem;
+/*Start Form submitted div within the assign1_submitted.html*/
+
+.form-submitted {
+    border: solid var(--border-size) var(--border-color);
+    height: fit-content;
+    width: 100%;
+    text-align: center;
+    background-color: var(--input-div-back);
+    margin-top: 5rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
+.form-submitted div {
+    margin-top: 1rem;
+}
+
+/*End Form submitted div within the assign1_submitted.html*/
+
+
+/*Id section for unique elements*/
+
+/*Assign a border around this with a specific padding and font-size not defined elsewhere in the document*/
 #required-fields-instructions {
-    border: 1px solid var(--border-color);
-    padding: 0.6rem;
+    border: solid var(--border-size) var(--border-color);
+    padding: 0.625rem;
     font-size: 1rem;
 }
 
+/*The substantive group div is unique as it contains both a title and 3 unique inputs*/
+/*Display the title and input group next to each other through flexbox.
+Provide padding with 0.625rem on the left and right and 0.1rem on the top and bottom*/
 #substantive-group-div {
     display: flex;
     flex-direction: row;
@@ -300,6 +360,7 @@ a:active, button:active {
     padding-bottom: 0.1rem;
 }
 
+/*Display the inputs next to each other*/
 #substantive-group-input-div {
     display: flex;
     justify-content: center;
@@ -307,23 +368,28 @@ a:active, button:active {
     width: 50%;
 }
 
+/*Assign the font-size for the forward slashes seperating the inputs*/
 #substantive-group-input-div p {
     font-size: 1.5rem;
 }
 
+/*Assign borders to the input, set a specific width, height, padding, and margin for each*/
 #substantive-group-input-div input {
-    border: solid 1px var(--border-color);
+    border: outset 1px var(--border-color);
     width: 8rem;
     height: var(--input-font-size);
     padding: 1rem 0;
     margin: 0.25rem;
 }
 
+/*Second level evaluation section styling*/
+/*Display input and paragraph on top of each other*/
 #input-sle {
     display: flex;
     flex-direction: column;
 }
 
+/*Display the divs containing the inputs and labels next to each other*/
 #sle-input > div {
     display: flex;
     flex-direction: row;
@@ -331,6 +397,7 @@ a:active, button:active {
     padding: 1rem;
 }
 
+/*Display the labels next to the input and center horizontally*/
 #sle-input > div > div {
     display: flex;
     flex-direction: row;
@@ -338,6 +405,7 @@ a:active, button:active {
     justify-content: start;
 }
 
+/*Tweak the input styling to have a border, a specific height and width, as well as padding and margin*/
 #sle-input > div > div > input {
     height: var(--input-font-size);
     padding: 1.5rem;
@@ -346,3 +414,5 @@ a:active, button:active {
     border: var(--border-size) inset var(--border-color);
 
 }
+
+/*End of id section for unique elements*/

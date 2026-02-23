@@ -13,7 +13,7 @@
             <!--Black and white flag canadian flag svg-->
             <img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Flag_of_Canada_%28black_and_white%29.svg" alt="black and white Canadian flag.">
             <p>Canada Revenue Agency</p>
-            <p><span lang="fr">Agence du revenue du Canada</span></p>
+            <p lang="fr">Agence du revenu du Canada</p>
         </div>
         <!--End of section-->
 
@@ -22,30 +22,30 @@
         <div class="privacy-act-statement">
             <h2>Protected when completed</h2>
             <p>The information on this form is protected under the provisions of the <em>Privacy Act</em>. The form is stored in standard bank, Employee Personal Record CRA PSE 901.</p>
-            <h2>Protégé une fois rempli</h2>
-            <p>Les renseignements que contient le présent formulaire sont protégés par les dispositions de la <em>Lol sur la protection des renseignements personnels</em>. Le formulaire est conservé dans le fichier ordinaire concernant le dossier personnel d'un employé ARC POE 901.</p>
+            <h2 lang="fr">Protégé une fois rempli</h2>
+            <p lang="fr">Les renseignements que contient le présent formulaire sont protégés par les dispositions de la <em>Loi sur la protection des renseignements personnels</em>. Le formulaire est conservé dans le fichier ordinaire concernant le dossier personnel d'un employé ARC POE 901.</p>
         </div>
         <!--End of privacy act statement-->
 
         <!--Beginning of the job application form section this includes the title and the following form elements-->
         <section class="job-app-form">
             <!--The header 1 or title of the form placed just above the form and to the left of the document-->
-            <h1>Job Application<br>Demande D'emploi</h1>
+            <h1>Job Application<br>Demande d'emploi</h1>
             <!--Form initially consists of eight css grid columns. On submission, the form redirects to the assign1_submitted.html file.-->
-            <form action="assign1_submitted.html">
+            <form action="assign1_submitted.html" method="get">
                 <!--Form buttons placed at the top right of the document-->
                 <div class="form-btns">
                     <!--Custom reset button which will clear the form on click-->
                     <button type="reset">Restore - Restaurer</button>
                     <!--Help buttons/links which redirect you to the english and french help pages on the official government of canada page-->
                     <a href="https://www.canada.ca/en/revenue-agency/services/forms-publications/about-forms-publications.html">Help</a>
-                    <a href="https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/a-propos-formulaires-publications-format.html">Aide</a>
+                    <a href="https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/a-propos-formulaires-publications-format.html" lang="fr">Aide</a>
                 </div>
                 <!--End of form button section-->
 
                 <!--Beginning of first section of form-->
                 <!--Instructions for required input fields-->
-                <p class="centre-text full-col-grid" id="required-fields-instructions">Fields marked with an asterisk (*) must be filled in or application will not be accepted. <br>Les champs qui portent un astérisque (*) doivent être remplis sinon la demande ne sera pas accepté.</p>      
+                <p class="centre-text full-col-grid" id="required-fields-instructions">Fields marked with an asterisk (*) must be filled in or application will not be accepted. <br>Les champs qui portent un astérisque (*) doivent être remplis sinon la demande ne sera pas acceptée.</p>      
                 <!--Section, label, and input for the job title-->
                 <div class="input-div half-col-grid">
                     <label for="job-title" class="required-text">Job Title &ndash; Titre du poste</label>
@@ -65,33 +65,33 @@
                 <div class="input-div half-col-grid">
                     <label for="lname" class="required-text">Family name &ndash; Nom</label>
                     <!--Using this pattern a ton. It includes all alpha characters and a hyphen for inclusiveness-->
-                    <input type="text" name="lname" id="lname" pattern="[a-zA-Z\-]" required>
+                    <input type="text" name="lname" id="lname" pattern="[a-zA-Z\-]+" required>
                 </div>
                 <!--Section, label, and input for the user's first name-->
                 <div class="input-div third-col-grid">
                     <label for="fname" class="required-text">Given name &ndash; Prénom</label>
-                    <input type="text" name="fname" id="fname" pattern="[a-zA-Z\-]" required>
+                    <input type="text" name="fname" id="fname" pattern="[a-zA-Z\-]+" required>
                 </div> 
                 <!--Section, label, and input for the user's initials. This field isn't required-->
                 <div class="input-div sixth-col-grid">
                     <label for="initial">Initial &ndash; Initiale</label>
-                    <input type="text" name="initial" id="initial" pattern="[a-zA-Z]">
+                    <input type="text" name="initial" id="initial" pattern="[a-zA-Z]{1,3}">
                 </div> 
                 <!--Address consists of three rows and four columns as defined by the classes-->
                 <!--Involves a textarea input which has a set amount of columns, rows, and has a maximum character length and doesn't have any controls-->
                 <div class="input-div half-col-grid row-span-three">
-                    <label for="address" class="required-text">Address &ndash; Addresse</label>
+                    <label for="address" class="required-text">Address &ndash; Adresse</label>
                     <textarea name="address" id="address" maxlength="256" required></textarea>
                 </div> 
                 <!--User's city input-->
                 <div class="input-div fourth-col-grid">
                     <label for="city" class="required-text">City &ndash; Ville</label>
-                    <input type="text" name="city" id="city" maxlength="25" pattern="[a-zA-Z\-]" required>
+                    <input type="text" name="city" id="city" maxlength="25" pattern="[a-zA-Z\-]+" required>
                 </div> 
                 <!--User's province input-->
                 <div class="input-div fourth-col-grid">
                     <label for="province" class="required-text">Province</label>
-                    <input type="text" name="province" id="province" maxlength="25" pattern="[a-zA-Z\-]" required>
+                    <input type="text" name="province" id="province" maxlength="25" pattern="[a-zA-Z\-\s]+" required>
                 </div> 
                 <!--Postal code input, must match a specific pattern-->
                 <div class="input-div fourth-col-grid">
@@ -101,7 +101,7 @@
                 <!--User's country input-->
                 <div class="input-div fourth-col-grid">
                     <label for="country" class="required-text">Country &ndash; Pays</label>
-                    <input type="text" name="country" id="country" maxlength="25" pattern="[a-zA-Z\-]" required>
+                    <input type="text" name="country" id="country" maxlength="25" pattern="[a-zA-Z\-\s]+" required>
                 </div> 
                 <!--User's email address input-->
                 <div class="input-div half-col-grid">
@@ -116,29 +116,29 @@
                 <!--Home phone is the only required field-->
                 <div class="input-div fourth-col-grid">
                     <label for="home-phone" class="required-text">Home &ndash; Résidence</label>
-                    <input class="centre-text" type="tel" name="home-phone" id="home-phone" minlength="10" maxlength="10" required>
+                    <input class="centre-text" type="tel" name="home-phone" id="home-phone" minlength="10" maxlength="10" pattern="[0-9]{10}" required>
                 </div>
                 <div class="input-div fourth-col-grid">
                     <label for="office-phone">Office &ndash; Bureau</label>
-                    <input class="centre-text" type="tel" name="office-phone" id="office-phone" minlength="10" maxlength="10">
+                    <input class="centre-text" type="tel" name="office-phone" id="office-phone" minlength="10" maxlength="10" pattern="[0-9]{10}">
                 </div>
                 <div class="input-div fourth-col-grid">
                     <label for="fax-num">Fax &ndash; Télécopieur</label>
-                    <input class="centre-text" type="tel" name="fax-num" id="fax-num" minlength="10" maxlength="10">
+                    <input class="centre-text" type="tel" name="fax-num" id="fax-num" minlength="10" maxlength="10" pattern="[0-9]{10}">
                 </div>
                 <div class="input-div fourth-col-grid">
                     <label for="other-num">Other &ndash; Autre</label>
-                    <input class="centre-text" type="tel" name="other-num" id="other-num" minlength="10" maxlength="10">
+                    <input class="centre-text" type="tel" name="other-num" id="other-num" minlength="10" maxlength="10" pattern="[0-9]{10}">
                 </div>
                 <!--End of telephone section of personal information-->
                 <!--End of personal information section of form-->
 
                 <!--Beginning of CRA section of form-->
                 <!--External title consisting of the full 12 columns-->
-                <h2 class="full-col-grid">For CRA and Public Service employees only<br>Réservé aux employé(e)s de l'ARC et de la fonction public seulement</h2>
+                <h2 class="full-col-grid">For CRA and Public Service employees only<br>Réservé aux employé(e)s de l'ARC et de la fonction publique seulement</h2>
                 <!--In table title for the fieldset-->
                 <div class="in-table-title full-col-grid">
-                    <h3>Citezenship &ndash; Citoyenneté</h3>
+                    <h3>Citizenship &ndash; Citoyenneté</h3>
                 </div>
                 <!--In the original CRA section, the radio buttons look more like checkboxes, however, they behave the same way-->
                 <!--Beginning of same citizenship status input-->
@@ -152,9 +152,9 @@
                     <input type="radio" name="citizenship-status" id="landed-immigrant" value="landed-immigrant-or-permanent-resident">
                     <label for="landed-immigrant">Landed Immigrant / Permanent Citizen<br>Immigrant(e) reçu(e) / Résident(e)</label>
                 </div>
-                <div class="input-div check-div radio-input-display third-col-grid" value="work-permit">
+                <div class="input-div check-div radio-input-display third-col-grid">
                     <!--Radio button for work permit-->
-                    <input type="radio" name="citizenship-status" id="work-permit">
+                    <input type="radio" name="citizenship-status" id="work-permit" value="work-permit">
                     <label for="work-permit">Work Permit<br>Permis de travail</label>
                 </div>
                 <!--End of citizenship status input-->
@@ -171,7 +171,7 @@
                 <div class="input-div check-div third-col-grid">
                     <!--Job division text input and label. Only accepts characters-->
                     <label for="job-division" class="required-text">Division</label>
-                    <input type="text" name="job-division" id="job-division" maxlength="25" pattern="[a-zA-Z]" required>
+                    <input type="text" name="job-division" id="job-division" maxlength="25" pattern="[a-zA-Z]{0,25}" required>
                 </div>
                 <div class="input-div check-div third-col-grid">
                     <!--Work section text input and label-->
@@ -212,7 +212,7 @@
                 <!--Personal Record identifier text field. Accepts alphanumeric characters with a maximum length of 8 characters-->
                 <div class="input-div half-col-grid">
                     <label for="pers-record-id" class="required-text">Personal Record Identifier (PRI)<br>Code d'indentification de dossier personnel (CIDP)</label>
-                    <input type="text" class="centre-text" id="pers-record-id" maxlength="8" required>
+                    <input type="text" class="centre-text" id="pers-record-id" name="pers-record-id" maxlength="8" required>
                 </div>
                 
                 <!--Date input field. Originally an official date type but changed due to differing format. Now includes three fields and reusable in case other pages need to be built-->
@@ -287,7 +287,7 @@
 
                 <!--Written exam language, incudes both french and english-->
                 <div class="input-div third-col-grid  multi-radio-field">
-                    <p class="required-text">c) For written examination<br>Pour un examin écrit</p>
+                    <p class="required-text">c) For written examination<br>Pour un examen écrit</p>
                     
                     <div>
                         <!--English radio button-->
@@ -307,7 +307,7 @@
 
                 <!--Working ability languages input-->
                 <div class="input-div half-col-grid  multi-radio-field">
-                    <p class="required-text">d) In which language(s) do you consider yourself to have a working ability?<br>Dans quelle(s) langue(s) officielle(s) estimez-vous êtres on mesure de travailler?</p>
+                    <p class="required-text">d) In which language(s) do you consider yourself to have a working ability?<br>Dans quelle(s) langue(s) officielle(s) estimez-vous être on mesure de travailler?</p>
                     
                     <div>
                         <!--English radio button-->
@@ -333,7 +333,7 @@
 
                 <!--Most proficient language input-->
                 <div class="input-div half-col-grid  multi-radio-field">
-                    <p class="required-text">e) To which official language do you have primary personal identification (the language in which you are most proficient)?<br>À quelle(s) langue(s) officielle(s) vous associez-vous personnellement? (langue que vous maîtrisez le miuex)?</p>
+                    <p class="required-text">e) To which official language do you have primary personal identification (the language in which you are most proficient)?<br>À quelle(s) langue(s) officielle(s) vous associez-vous personnellement? (langue que vous maîtrisez le mieux)?</p>
         
                     <div>
                         <!--English radio button-->
@@ -360,12 +360,12 @@
                         <!--English Second Language Evaluation text input-->
                         <div>
                             <label for="english-sle">English<br>Anglais</label>
-                            <input class="centre-text" type="text" id="english-sle" name="english-sle" maxlength="3" pattern="[a-zA-Z]">
+                            <input class="centre-text" type="text" id="english-sle" name="english-sle" maxlength="3" pattern="[a-zA-Z]{0,3}">
                         </div>
                         <!--French Second Language Evaluation text input-->
                         <div>
                             <label for="french-sle">French<br>Français</label>
-                            <input class="centre-text" type="text" id="french-sle" name="french-sle" maxlength="3" pattern="[a-zA-Z]">
+                            <input class="centre-text" type="text" id="french-sle" name="french-sle" maxlength="3" pattern="[a-zA-Z]{0,3}">
                         </div>
 
                     </div>
@@ -374,7 +374,7 @@
                 <!--End of official language profile section of form-->
 
                 <!--Form submit button-->
-                <button type="submit">Submit</button>
+                <button type="submit" class="sixth-col-grid">Submit</button>
             </form>
         </section>
     </body>
