@@ -13,7 +13,7 @@
             <!--Black and white flag canadian flag svg-->
             <img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Flag_of_Canada_%28black_and_white%29.svg" alt="black and white Canadian flag.">
             <p>Canada Revenue Agency</p>
-            <p>Agence du revenue du Canada</p>
+            <p><span lang="fr">Agence du revenue du Canada</span></p>
         </div>
         <!--End of section-->
 
@@ -65,12 +65,12 @@
                 <div class="input-div half-col-grid">
                     <label for="lname" class="required-text">Family name &ndash; Nom</label>
                     <!--Using this pattern a ton. It includes all alpha characters and a hyphen for inclusiveness-->
-                    <input type="text" name="lname" id="lname" pattern="[a-zA-Z-]" required>
+                    <input type="text" name="lname" id="lname" pattern="[a-zA-Z\-]" required>
                 </div>
                 <!--Section, label, and input for the user's first name-->
                 <div class="input-div third-col-grid">
                     <label for="fname" class="required-text">Given name &ndash; Prénom</label>
-                    <input type="text" name="fname" id="fname" pattern="[a-zA-Z-]" required>
+                    <input type="text" name="fname" id="fname" pattern="[a-zA-Z\-]" required>
                 </div> 
                 <!--Section, label, and input for the user's initials. This field isn't required-->
                 <div class="input-div sixth-col-grid">
@@ -86,12 +86,12 @@
                 <!--User's city input-->
                 <div class="input-div fourth-col-grid">
                     <label for="city" class="required-text">City &ndash; Ville</label>
-                    <input type="text" name="city" id="city" maxlength="25" pattern="[a-zA-Z-]" required>
+                    <input type="text" name="city" id="city" maxlength="25" pattern="[a-zA-Z\-]" required>
                 </div> 
                 <!--User's province input-->
                 <div class="input-div fourth-col-grid">
                     <label for="province" class="required-text">Province</label>
-                    <input type="text" name="province" id="province" maxlength="25" pattern="[a-zA-Z-]" required>
+                    <input type="text" name="province" id="province" maxlength="25" pattern="[a-zA-Z\-]" required>
                 </div> 
                 <!--Postal code input, must match a specific pattern-->
                 <div class="input-div fourth-col-grid">
@@ -101,7 +101,7 @@
                 <!--User's country input-->
                 <div class="input-div fourth-col-grid">
                     <label for="country" class="required-text">Country &ndash; Pays</label>
-                    <input type="text" name="country" id="country" maxlength="25" pattern="[a-zA-Z-]" required>
+                    <input type="text" name="country" id="country" maxlength="25" pattern="[a-zA-Z\-]" required>
                 </div> 
                 <!--User's email address input-->
                 <div class="input-div half-col-grid">
