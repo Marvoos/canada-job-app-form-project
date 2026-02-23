@@ -5,13 +5,15 @@
     --btnBackColor: #0fd3e9;
     --btnBorderColor: #1BC4D9;
     --btnShadowColor: #AAAAAA;
-    --checkboxColor: #AAAAAA;
+    --input-color: #d2d4ff4b;
+    --input-div-back: #fafafa;
     
     --required-symbol: '*';
     --input-font-size: 1.2rem;
+    --standard-label-size: 0.8rem;
+    --grid-system-size: 12;
 
 }
-
 
 * {
     margin: 0;
@@ -26,30 +28,81 @@ body {
     background-color: var(--back-color);
 }
 
-input {
+button {
+    padding: 0rem 1rem;
+}
+
+input, textarea {
     font-family: 'Courier New', Courier, monospace;
+    height: calc(100% - var(--standard-label-size));
+    font-size: var(--input-font-size);
+    border: none;
+    background-color: var(--input-color);
+    margin-top: auto;
 }
 
-.required-text::before {
-    content: var(--required-symbol);
+textarea { 
+    width: 100%;
+    height: calc(100% - var(--standard-label-size));
+    resize: none;
+    border: none;
+    background-color: var(--input-color);
 }
 
-.company-logo-name {
-    display: flex;
-    position: absolute;
-    top: 2rem;
-    left: 2rem;
-    width: 25rem;
+input:focus, textarea:focus {
+    background-color: var(--input-div-back);
+    border: none;
+    outline: none;
 }
 
-.company-logo-name img {
-    width: 4rem;
+a, button {
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: var(--btnBackColor);
+    border: outset 0.25rem var(--btnBorderColor);
+    border-top: outset 0.25rem var(--back-color);
+    border-left: outset 0.25rem var(--back-color);
+    box-shadow:  0 0 0 4px var(--btnShadowColor);
+    margin-left: 0.5rem;
+    cursor: pointer;
+    
+}
+
+button[type="submit"] {
+    margin-top: 1rem;
+}
+
+input[type="radio"] {
     height: auto;
-    margin-right: 1.5rem;
+    margin-top: 0;
+    background: none;
 }
 
-.company-logo-name p {
-    width: 40%;
+a:active, button:active {
+    background-color: var(--btnBackColor);
+    border: inset 0.25rem var(--back-color);
+    border-top: inset 0.25rem var(--btnBorderColor);
+    border-left: inset 0.25rem var(--btnBorderColor);
+}
+
+.privacy-act-statement {
+    word-spacing: -1px;
+    position: absolute;
+    right: 2rem;
+    top: 2.3rem;
+    width: 30rem;
+}
+
+.privacy-act-statement h2 {
+    font-size: 0.7rem;
+}
+
+.privacy-act-statement p {
+    font-size: 0.55rem;
+}
+
+.job-app-form {
+    font-size: 0.8rem;
 }
 
 .job-app-form h1 {
@@ -65,14 +118,28 @@ input {
     font-weight: bold;
 }
 
+.company-logo-name {
+    display: flex;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    width: 20rem;
+}
+
+.company-logo-name img {
+    width: 4rem;
+    height: auto;
+    margin-right: 1.5rem;
+}
+
+.company-logo-name p {
+    width: 40%;
+}
+
 .form-btns {
     position: absolute;
     right: 2rem;
     top: 0.25rem;   
-}
-
-.form-btns button {
-    padding: 0rem 1rem;
 }
 
 .form-btns a {
@@ -81,50 +148,20 @@ input {
     padding: 0rem 2rem;
 }
 
-.form-btns a, .form-btns button {
-    font-size: 1rem;
-    font-weight: bold;
-    background-color: var(--btnBackColor);
-    border: outset 0.25rem var(--btnBorderColor);
-    border-top: outset 0.25rem var(--back-color);
-    border-left: outset 0.25rem var(--back-color);
-    box-shadow:  0 0 0 4px var(--btnShadowColor);
-    margin-left: 0.5rem;
-    cursor: pointer;
-    
+.required-text::before {
+    content: var(--required-symbol);
 }
 
-.form-btns a:active, .form-btns button:active {
-    background-color: var(--btnBackColor);
-    border: inset 0.25rem var(--back-color);
-    border-top: inset 0.25rem var(--btnBorderColor);
-    border-left: inset 0.25rem var(--btnBorderColor);
-}
 
 .job-app-form {
     margin-top: 5rem;
 }
 
-.eight-column-section {
+.job-app-form form {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(var(--grid-system-size), minmax(0, 1fr));
     grid-auto-rows: minmax(2rem, auto);
-}
-
-.privacy-act-statement {
-    word-spacing: -1px;
-    position: absolute;
-    right: 2rem;
-    top: 2.3rem;
-    width: 30rem;
-}
-
-.privacy-act-statement h1 {
-    font-size: 0.7rem;
-}
-
-.privacy-act-statement p {
-    font-size: 0.55rem;
+    
 }
 
 .job-app-form h2 {
@@ -142,39 +179,15 @@ input {
     border: solid var(--border-size) var(--border-color);
 }
 
-input[type="text"], input[type="email"] {
-    width: 100%;
-    height: calc(100% - var(--input-font-size));
-    font-size: var(--input-font-size);
-    border: none;
-    background-color: #d2d4ff4b;
-}
-
 .input-div {
+    background: var(--input-div-back);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     padding: 0px 5px;
     border: solid var(--border-size) var(--border-color);
 }
 
-input[type="text"]:focus {
-    background-color: var(--back-color);
-    border: none;
-    outline: none;
-}
-
-input[type="checkbox"] {
-    color: var(--checkboxColor);
-    border: solid var(--border-size) var(--checkboxColor);
-
-}
-
-.short-input label {
-    width: 70%;
-}
-
-.short-input input {
-    float: right;
-    width: 50%;
-}
 
 .job-app-form label {
     font-size: 0.8rem;
@@ -188,78 +201,148 @@ input[type="checkbox"] {
     text-align: center;
 }
 
-.nine-column-section {
-    display: grid;
-    grid-template-columns: repeat(9, 1fr);
-    grid-auto-rows: minmax(2rem, auto);
+.radio-input-display {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    padding: 0.5rem;
 }
 
-.one-col {
-    grid-column: span 1;
+.radio-input-display > input {
+    margin: 0.5rem;
 }
 
-.two-col {
-    grid-column: span 2;
+.date-input-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
 }
 
-.three-col {
-    grid-column: span 3;
+.date-input-div > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
 }
 
-.four-col {
-    grid-column: span 4;
+.date-input-div input {
+    letter-spacing: 0.5rem;
+    height: calc(100% - var(--standard-label-size));
+    width: 100%;
 }
 
-.five-col {
-    grid-column: span 5;
+.sixth-col-grid {
+    grid-column: span calc(var(--grid-system-size) / 6);
 }
 
-.six-col {
-    grid-column: span 6;
+.fourth-col-grid {
+    grid-column: span calc(var(--grid-system-size) / 4);
 }
 
-.seven-col {
-    grid-column: span 7;
+.half-col-grid {
+    grid-column: span calc(var(--grid-system-size) / 2);
 }
 
-.eight-col {
-    grid-column: span 8;
+.third-col-grid {
+    grid-column: span calc(var(--grid-system-size) / 3);
 }
 
-.nine-col {
-    grid-column: span 9;
+.full-col-grid {
+    grid-column: span var(--grid-system-size);
 }
 
-.one-row {
-    grid-row: span 1;
-}
-
-.two-row {
-    grid-row: span 2;
-}
-
-.three-row {
+.row-span-three {
     grid-row: span 3;
 }
 
-.four-row {
-    grid-row: span 4;
-}
-
-.five-row {
-    grid-row: span 5;
-}
-
-.six-row {
-    grid-row: span 6;
-}
-
-#date-input-div {
-    display: flex;
-    flex-direction: row;
-}
-
-#date-input-div div {
+.multi-radio-field {
     display: flex;
     flex-direction: column;
+}
+
+.multi-radio-field > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}
+
+.multi-radio-field > div > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    margin: 1rem;
+}
+
+.multi-radio-field > div > div > label {
+    margin: 0.5rem;
+}
+
+#required-fields-instructions {
+    border: 1px solid var(--border-color);
+    padding: 0.6rem;
+    font-size: 1rem;
+}
+
+#substantive-group-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.625rem;
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+}
+
+#substantive-group-input-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+#substantive-group-input-div p {
+    font-size: 1.5rem;
+}
+
+#substantive-group-input-div input {
+    border: solid 1px var(--border-color);
+    width: 8rem;
+    height: var(--input-font-size);
+    padding: 1rem 0;
+    margin: 0.25rem;
+}
+
+#input-sle {
+    display: flex;
+    flex-direction: column;
+}
+
+#sle-input > div {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 1rem;
+}
+
+#sle-input > div > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+}
+
+#sle-input > div > div > input {
+    height: var(--input-font-size);
+    padding: 1.5rem;
+    width: 50%;
+    margin-left: 1rem;
+    border: var(--border-size) inset var(--border-color);
+
 }

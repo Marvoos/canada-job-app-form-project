@@ -6,167 +6,301 @@
         <title>Job Application</title>
     </head>
     <body>
+            
+        <!--Canada's flag and the instituion behind the job application form-->
+        <!--company-logo-name class used to position this div absolutely at the top left-->
         <div class="company-logo-name">
+            <!--Black and white flag canadian flag svg-->
             <img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Flag_of_Canada_%28black_and_white%29.svg" alt="black and white Canadian flag.">
             <p>Canada Revenue Agency</p>
             <p>Agence du revenue du Canada</p>
         </div>
+        <!--End of section-->
+
+        <!--Beginning of privacy act statement-->
+        <!--Positioned absolutely in the top right of the document below the help and reset buttons-->
         <div class="privacy-act-statement">
-            <h1>Protected when completed</h1>
+            <h2>Protected when completed</h2>
             <p>The information on this form is protected under the provisions of the <em>Privacy Act</em>. The form is stored in standard bank, Employee Personal Record CRA PSE 901.</p>
-            <h1>Protégé une fois rempli</h1>
+            <h2>Protégé une fois rempli</h2>
             <p>Les renseignements que contient le présent formulaire sont protégés par les dispositions de la <em>Lol sur la protection des renseignements personnels</em>. Le formulaire est conservé dans le fichier ordinaire concernant le dossier personnel d'un employé ARC POE 901.</p>
         </div>
+        <!--End of privacy act statement-->
+
+        <!--Beginning of the job application form section this includes the title and the following form elements-->
         <section class="job-app-form">
+            <!--The header 1 or title of the form placed just above the form and to the left of the document-->
             <h1>Job Application<br>Demande D'emploi</h1>
-            <form action="" class="eight-column-section">
+            <!--Form initially consists of eight css grid columns. On submission, the form redirects to the assign1_submitted.html file.-->
+            <form action="assign1_submitted.html">
+                <!--Form buttons placed at the top right of the document-->
                 <div class="form-btns">
+                    <!--Custom reset button which will clear the form on click-->
                     <button type="reset">Restore - Restaurer</button>
+                    <!--Help buttons/links which redirect you to the english and french help pages on the official government of canada page-->
                     <a href="https://www.canada.ca/en/revenue-agency/services/forms-publications/about-forms-publications.html">Help</a>
                     <a href="https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/a-propos-formulaires-publications-format.html">Aide</a>
                 </div>
-                <p class="eight-col centre-text">Fields marked with an asterisk (*) must be filled in or application will not be accepted. <br>Les champs qui portent un astérisque (*) doivent être remplis sinon la demande ne sera pas accepté.</p>      
-                <div class="input-div four-col">
+                <!--End of form button section-->
+
+                <!--Beginning of first section of form-->
+                <!--Instructions for required input fields-->
+                <p class="centre-text full-col-grid" id="required-fields-instructions">Fields marked with an asterisk (*) must be filled in or application will not be accepted. <br>Les champs qui portent un astérisque (*) doivent être remplis sinon la demande ne sera pas accepté.</p>      
+                <!--Section, label, and input for the job title-->
+                <div class="input-div half-col-grid">
                     <label for="job-title" class="required-text">Job Title &ndash; Titre du poste</label>
                     <input type="text" name="job-title" id="job-title" required>
                 </div>
-                <div class="input-div four-col">
+                <!--Section, label, and input for the selection process number-->
+                <div class="input-div half-col-grid">
                     <label for="sel-proc-num" class="required-text">Selection process number &ndash; Numéro du processus de sélection</label>
                     <input type="text" name="sel-proc-num" id="sel-proc-num" required>
                 </div> 
-                <h2 class="eight-col">Personal information &ndash; Renseignements personnels</h2>
-                <div class="input-div four-col">
+                <!--End of first section of form-->
+
+                <!--Beginning of personal information section of form-->
+                <!--The headding for personal information consists of eight columns-->
+                <h2 class="full-col-grid">Personal information &ndash; Renseignements personnels</h2>
+                <!--Section, label, and input for the user's last name-->
+                <div class="input-div half-col-grid">
                     <label for="lname" class="required-text">Family name &ndash; Nom</label>
                     <input type="text" name="lname" id="lname" required>
                 </div>
-                <div class="input-div three-col">
+                <!--Section, label, and input for the user's first name-->
+                <div class="input-div third-col-grid">
                     <label for="fname" class="required-text">Given name &ndash; Prénom</label>
                     <input type="text" name="fname" id="fname" required>
                 </div> 
-                <div class="input-div one-col">
+                <!--Section, label, and input for the user's initials. This field isn't required-->
+                <div class="input-div sixth-col-grid">
                     <label for="initial">Initial &ndash; Initiale</label>
-                    <input type="text" name="initial" id="initial" required>
+                    <input type="text" name="initial" id="initial">
                 </div> 
-                <div class="input-div four-col three-row">
+                <!--Address consists of three rows and four columns as defined by the classes-->
+                <!--Involves a textarea input which has a set amount of columns, rows, and has a maximum character length and doesn't have any controls-->
+                <div class="input-div half-col-grid row-span-three">
                     <label for="address" class="required-text">Address &ndash; Addresse</label>
-                    <input type="text" name="address" id="address" required>
+                    <textarea name="address" id="address" maxlength="256" required></textarea>
                 </div> 
-                <div class="input-div two-col">
+                <!--User's city input-->
+                <div class="input-div fourth-col-grid">
                     <label for="city" class="required-text">City &ndash; Ville</label>
-                    <input type="text" name="city" id="city" required>
+                    <input type="text" name="city" id="city" maxlength="25" required>
                 </div> 
-                <div class="input-div two-col">
+                <!--User's province input-->
+                <div class="input-div fourth-col-grid">
                     <label for="province" class="required-text">Province</label>
-                    <input type="text" name="province" id="province" required>
+                    <input type="text" name="province" id="province" maxlength="25" required>
                 </div> 
-                <div class="input-div two-col">
+                <!--Postal code input, must match a specific pattern-->
+                <div class="input-div fourth-col-grid">
                     <label for="postal-code" class="required-text">Postal Code &ndash; Code postal</label>
-                    <input type="text" name="postal-code" id="postal-code" required>
+                    <input type="text" class="centre-text" name="postal-code" id="postal-code" maxlength="6" pattern="[a-zA-Z][0-9][a-zA-Z][0-9][a-zA-Z][0-9]" required>
                 </div> 
-                <div class="input-div two-col">
+                <!--User's country input-->
+                <div class="input-div fourth-col-grid">
                     <label for="country" class="required-text">Country &ndash; Pays</label>
-                    <input type="text" name="country" id="country" required>
+                    <input type="text" name="country" id="country" maxlength="25" required>
                 </div> 
-                <div class="input-div four-col short-input">
+                <!--User's email address input-->
+                <div class="input-div half-col-grid">
                     <label for="email-address" class="required-text">Email address (Format: username@hostname.domain)<br> Courriel (Format: utilisateur@hôte.domaine)</label>
                     <input type="email" name="email-address" id="email-address" required>
                 </div> 
-                <div class="in-table-title eight-col">
+                <!--Beginning of telephone section of personal information-->
+                <!--All fields in this section are of type tel (telephone) and must have a length of 10-->
+                <div class="in-table-title full-col-grid">
                     <h3 class="required-text">Telephone &ndash; Téléphone</h3>
                 </div>
-                <div class="input-div two-col">
+                <!--Home phone is the only required field-->
+                <div class="input-div fourth-col-grid">
                     <label for="home-phone" class="required-text">Home &ndash; Résidence</label>
-                    <input class="centre-text" type="text" name="home-phone" id="home-phone" required>
+                    <input class="centre-text" type="tel" name="home-phone" id="home-phone" minlength="10" maxlength="10" required>
                 </div>
-                <div class="input-div two-col">
+                <div class="input-div fourth-col-grid">
                     <label for="office-phone">Office &ndash; Bureau</label>
-                    <input class="centre-text" type="text" name="office-phone" id="office-phone">
+                    <input class="centre-text" type="tel" name="office-phone" id="office-phone" minlength="10" maxlength="10">
                 </div>
-                <div class="input-div two-col">
+                <div class="input-div fourth-col-grid">
                     <label for="fax-num">Fax &ndash; Télécopieur</label>
-                    <input class="centre-text" type="text" name="fax-num" id="fax-num">
+                    <input class="centre-text" type="tel" name="fax-num" id="fax-num" minlength="10" maxlength="10">
                 </div>
-                <div class="input-div two-col">
+                <div class="input-div fourth-col-grid">
                     <label for="other-num">Other &ndash; Autre</label>
-                    <input class="centre-text" type="text" name="other-num" id="other-num">
+                    <input class="centre-text" type="tel" name="other-num" id="other-num" minlength="10" maxlength="10">
                 </div>
-                <div class="eight-col nine-column-section">
-                    <h2 class="nine-col">For CRA and Public Service employees only<br>Réservé aux employé(e)s de l'ARC et de la fonction public seulement</h2>
-                    <div class="in-table-title nine-col">
-                        <h3>Citezenship &ndash; Citoyenneté</h3>
+                <!--End of telephone section of personal information-->
+                <!--End of personal information section of form-->
+
+                <!--Beginning of CRA section of form-->
+                <!---->
+                <h2 class="full-col-grid">For CRA and Public Service employees only<br>Réservé aux employé(e)s de l'ARC et de la fonction public seulement</h2>
+                <div class="in-table-title full-col-grid">
+                    <h3>Citezenship &ndash; Citoyenneté</h3>
+                </div>
+                <div class="input-div check-div radio-input-display third-col-grid">
+                    <input type="radio" name="citizenship-status" id="can-citizen">
+                    <label for="can-citizen">Canadian Citizen<br>Citoyen(ne) canadien(ne)</label>
+                </div>
+                <div class="input-div check-div radio-input-display third-col-grid">
+                    <input type="radio" name="citizenship-status" id="landed-immigrant">
+                    <label for="landed-immigrant">Landed Immigrant / Permanent Citizen<br>Immigrant(e) reçu(e) / Résident(e)</label>
+                </div>
+                <div class="input-div check-div radio-input-display third-col-grid">
+                    <input type="radio" name="citizenship-status" id="work-permit">
+                    <label for="work-permit">Work Permit<br>Permis de travail</label>
+                </div>
+                <div class="in-table-title full-col-grid">
+                    <h3 class="required-text">Where is your current work location?<br>À quel endroit travaillez-vous présentement?</h3>
+                </div>
+                <div class="input-div check-div third-col-grid">
+                    <label for="office-loc" class="required-text">Office / City &ndash; Bureau / Ville</label>
+                    <input type="text" name="office-loc" id="office-loc" maxlength="25" required>
+                </div>
+                <div class="input-div check-div third-col-grid">
+                    <label for="job-division" class="required-text">Division</label>
+                    <input type="text" name="job-division" id="job-division" maxlength="25" required>
+                </div>
+                <div class="input-div check-div third-col-grid">
+                    <label for="work-section" class="required-text">Work Section &ndash; Section de travail</label>
+                    <input type="text" name="work-section" id="work-section" maxlength="25" required>
+                </div>
+                <div class="in-table-title full-col-grid" id="substantive-group-div">
+                    <div>
+                        <h3 class="required-text">Substantive group / sub-group / level (i.e., CR-04, GS-STS-03, SP-04)<br>Group / sous-group / niveau de titularisation (p. ex. CR04, GS-STS-03, SP-04)</h3>
                     </div>
-                    <div class="input-div check-div three-col">
-                        <input type="radio" name="citizenship-status" id="can-citizen">
-                        <label for="can-citizen">Canadian Citizen<br>Citoyen(ne) canadien(ne)</label>
-                    </div>
-                    <div class="input-div check-div three-col">
-                        <input type="radio" name="citizenship-status" id="landed-immigrant">
-                        <label for="landed-immigrant">Landed Immigrant / Permanent Citizen<br>Immigrant(e) reçu(e) / Résident(e)</label>
-                    </div>
-                    <div class="input-div check-div three-col">
-                        <input type="radio" name="citizenship-status" id="work-permit">
-                        <label for="work-permit">Work Permit<br>Permis de travail</label>
-                    </div>
-                    <div class="in-table-title nine-col">
-                        <h3 class="required-text">Where is your current work location?<br>À quel endroit travaillez-vous présentement?</h3>
-                    </div>
-                    <div class="input-div check-div three-col">
-                        <label for="office-loc" class="required-text">Office / City &ndash; Bureau / Ville</label>
-                        <input type="text" name="office-loc" id="office-loc">
-                    </div>
-                    <div class="input-div check-div three-col">
-                        <label for="job-division" class="required-text">Division</label>
-                        <input type="text" name="job-division" id="job-division">
-                    </div>
-                    <div class="input-div check-div three-col">
-                        <label for="work-section" class="required-text">Work Section &ndash; Section de travail</label>
-                        <input type="text" name="work-section" id="work-section">
-                    </div>
-                    <div class="in-table-title nine-col">
-                        <div>
-                            <h3 class="required-text">Substantive group / sub-group / level (i.e., CR-04, GS-STS-03, SP-04)<br>Group / sous-group / niveau de titularisation (p. ex. CR04, GS-STS-03, SP-04)</h3>
-                        </div>
-                        <div>
-                            <input type="text" class="substantive-group-input centre-text" name="substantive-group" id="substantive-group"><p>/</p>
-                            <input type="text" class="substantive-group-input centre-text" name="sub-group" id="sub-group"><p>/</p>
-                            <input type="text" class="substantive-group-input centre-text" name="group-level" id="group-level">
-                        </div>
-                    </div>
-                    <div class="nine-col eight-column-section">
-                        <div class="in-table-title eight-col">
-                            <p class="required-text">Please indicate if you are &ndash; Veuillez indiquer si vous êtes</p>
-                        </div>
-                        <div class="input-div four-col">
-                            <input type="radio" name="employment-status" id="permanent-employee">
-                            <label for="permanent-employee">Permanent Employee<br>Un(e) employé(e) permanent(e)</label>
-                        </div>
-                        <div class="input-div four-col">
-                            <input type="radio" name="employment-status" id="term-employee">
-                            <label for="term-employee">Term Employee<br>Un(e) employé(e) nommé(e) pour un(e) période déterminée</label>
-                        </div>
-                        <div class="input-div four-col short-input">
-                            <label for="pers-record-id" class="required-text">Personal Record Identifier (PRI)<br>Code d'indentification de dossier personnel (CIDP)</label>
-                            <input type="text" id="pers-record-id">
-                        </div>
-                        <div class="in-table-title two-col">
-                            <p>Anticipated end date of your term contract &ndash;<br>Date prévue de la fin de votre contrat déterminé</p>
-                        </div>
-                        <div class="input-div two-col" id="date-input-div">
-                            <div>
-                                <label for="year-contract-end">Y&ndash;A</label>
-                                <input type="number" min="1900" max="2026" id="year-contract-end" name="year-contract-end">
-                            </div>
-                            <div>
-                                <label for="month-contract-end">M</label>
-                                <input type="number" min="1" max="12" id="month-contract-end" name="month-contract-end">
-                            </div>
-                            <div>
-                                <label for="day-contract-end">Y&ndash;A</label>
-                                <input type="number" min="1" max="31" id="day-contract-end" name="day-contract-end">
-                            </div>
-                        </div>
+                    <div id="substantive-group-input-div">
+                        <input type="text" class="centre-text" name="substantive-group" id="substantive-group" maxlength="8" required><p>/</p>
+                        <input type="text" class="centre-text" name="sub-group" id="sub-group" maxlength="11" required><p>/</p>
+                        <input type="text" class="centre-text" name="group-level" id="group-level" maxlength="8" required>
                     </div>
                 </div>
+                <div class="in-table-title full-col-grid">
+                    <p class="required-text">Please indicate if you are &ndash; Veuillez indiquer si vous êtes</p>
+                </div>
+                <div class="input-div radio-input-display half-col-grid">
+                    <input type="radio" name="employment-status" id="permanent-employee" required>
+                    <label for="permanent-employee">Permanent Employee<br>Un(e) employé(e) permanent(e)</label>
+                </div>
+                <div class="input-div radio-input-display half-col-grid">
+                    <input type="radio" name="employment-status" id="term-employee" required>
+                    <label for="term-employee">Term Employee<br>Un(e) employé(e) nommé(e) pour un(e) période déterminée</label>
+                </div>
+                <div class="input-div half-col-grid">
+                    <label for="pers-record-id" class="required-text">Personal Record Identifier (PRI)<br>Code d'indentification de dossier personnel (CIDP)</label>
+                    <input type="text" class="centre-text" id="pers-record-id" maxlength="8" required>
+                </div>
+                <div class="in-table-title fourth-col-grid">
+                    <p>Anticipated end date of your term contract<br>Date prévue de la fin de votre contrat déterminé</p>
+                </div>
+                <div class="input-div date-input-div fourth-col-grid">
+                    <div>
+                        <label for="year-contract-end">Y&ndash;A</label>
+                        <input class="centre-text" type="number" min="2026" max="2100" id="year-contract-end" name="year-contract-end">
+                    </div>
+                    <div>
+                        <label for="month-contract-end">M</label>
+                        <input class="centre-text" type="number" min="1" max="12" id="month-contract-end" name="month-contract-end">
+                    </div>
+                    <div>
+                        <label for="day-contract-end">D&ndash;J</label>
+                        <input class="centre-text" type="number" min="1" max="31" id="day-contract-end" name="day-contract-end">
+                    </div>
+                </div>
+                <!--Beginning of CRA section of form-->
+
+                <!--Beginning of official language profile section of form-->
+                <h2 class="full-col-grid">Official language profile &ndash; Profil linguistique officiel</h2>
+                <div class="in-table-title full-col-grid">
+                    <p>Please indicate if you are &ndash; Veuillez indiquer si vous êtes</p>
+                </div>
+                <div class="input-div third-col-grid multi-radio-field">
+                    <p class="required-text">a) For correspondence<br>Pour la correspondance</p>
+                    <div class="third-col-grid">
+                        <div>
+                            <input type="radio" name="correspondence-lang" id="correspondence-lang-en" value="english" required>
+                            <label for="correspondence-lang-en">English<br>Anglais</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="correspondence-lang" id="correspondence-lang-fr" value="french" required>
+                            <label for="correspondence-lang-fr">French<br>Français</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-div third-col-grid  multi-radio-field">
+                    <p class="required-text">b) During an interview<br>Pour les entrevues</p>
+                    <div>
+                        <div>
+                            <input type="radio" name="interview-lang" id="interview-lang-en" value="english" required>
+                            <label for="interview-lang-en">English<br>Anglais</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="interview-lang" id="interview-lang-fr" value="french" required>
+                            <label for="interview-lang-fr">French<br>Français</label>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="input-div third-col-grid  multi-radio-field">
+                    <p class="required-text">c) For written examination<br>Pour un examin écrit</p>
+                    <div>
+                        <div>
+                            <input type="radio" name="exam-lang" id="exam-lang-en" value="english" required>
+                            <label for="exam-lang-en">English<br>Anglais</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="exam-lang" id="exam-lang-fr" value="french" required>
+                            <label for="exam-lang-fr">French<br>Français</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-div half-col-grid  multi-radio-field">
+                    <p class="required-text">d) In which language(s) do you consider yourself to have a working ability?<br>Dans quelle(s) langue(s) officielle(s) estimez-vous êtres on mesure de travailler?</p>
+                    <div>
+                        <div>
+                            <input type="radio" name="working-ability-lang" id="working-ability-en"  value="english" required>
+                            <label for="working-ability-en">English<br>Anglais</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="working-ability-lang" id="working-ability-fr" value="french" required>
+                            <label for="working-ability-fr">French<br>Français</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="working-ability-lang" id="working-ability-both" value="both" required>
+                            <label for="working-ability-both">Both<br>Les deux</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-div half-col-grid  multi-radio-field">
+                    <p class="required-text">e) To which official language do you have primary personal identification (the language in which you are most proficient)?<br>À quelle(s) langue(s) officielle(s) vous associez-vous personnellement? (langue que vous maîtrisez le miuex)?</p>
+                    <div>
+                        <div>
+                            <input type="radio" name="proficient-lang" id="proficient-lang-en"  value="english" required>
+                            <label for="proficient-lang-en">English<br>Anglais</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="proficient-lang" id="proficient-lang-fr" value="french" required>
+                            <label for="proficient-lang-fr">French<br>Français</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-div full-col-grid" id="sle-input">
+                    <p>If you have valid SLE (Second Language Evaluation) results, please indicate your profile next to the language you were tested in (e.i., BBB)<br>Si vous avez des résultats d'Évaulation de langue seconde (ELS), veuillez indiquer votre profil pour la langue visée (p. ex. BBB)</p>
+                    <div>
+                        <div>
+                            <label for="english-sle">English<br>Anglais</label>
+                            <input class="centre-text" type="text" id="english-sle" name="english-sle" maxlength="3">
+                        </div>
+                        <div>
+                            <label for="french-sle">French<br>Français</label>
+                            <input class="centre-text" type="text" id="french-sle" name="french-sle" maxlength="3">
+                        </div>
+                    </div>
+                </div>
+                <!--End of official language profile section of form-->
+
+                <!--Form submit button-->
+                <button type="submit">Submit</button>
             </form>
         </section>
     </body>
